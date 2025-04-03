@@ -1,0 +1,147 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e0e5ec;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Navbar */
+nav {
+    width: 100%;
+    background: #4CAF50;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+/* Chat Container with Glassmorphism */
+.container {
+    width: 90%;
+    max-width: 600px;
+    height: 400px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chat Messages with 3D effect */
+.message {
+    padding: 12px 18px;
+    border-radius: 20px;
+    max-width: 75%;
+    font-size: 14px;
+    display: inline-block;
+    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.15), -3px -3px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Sent Messages */
+.right {
+    background: linear-gradient(145deg, #4CAF50, #3e8e41);
+    color: white;
+    align-self: flex-end;
+}
+
+/* Received Messages */
+.left {
+    background: linear-gradient(145deg, #e0e0e0, #c0c0c0);
+    color: black;
+    align-self: flex-start;
+}
+
+/* Message Input with Neomorphic Design */
+.send {
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#messageInp {
+    flex: 1;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    background: #e0e5ec;
+    box-shadow: inset 3px 3px 6px #babecc, inset -3px -3px 6px white;
+}
+
+.btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-left: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2), -3px -3px 8px rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+    box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.3), -5px -5px 12px rgba(255, 255, 255, 0.8);
+}
+
+/* Scrollbar Styling */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: #e0e5ec;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        height: 300px;
+    }
+    #messageInp {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+    }
+}
